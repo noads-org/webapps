@@ -1,0 +1,32 @@
+# workflow for CI quality
+
+name: CI
+
+on: [push]
+
+env:
+  HUSKY: 0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8.15.4
+
+      - name: Configurando Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.11.1
+          cache: "pnpm"
+
+      - name: Instalando dependencias
+        run: pnpm install
+
+      - name: Rodando os checks de CI
+        run: pnpm run ci
