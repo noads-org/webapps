@@ -67,7 +67,7 @@ Caso queira rodar algum comando através do Turbo (que vai rodar todos as depend
 pnpm turbo --filter @noads/webapp run dev
 ```
 
-> [!Note] Importante
+> [!Note]
 > Vale ressaltar que o comando só vai funcionar se ele estiver listado dentro do `./turbo.json[pipelines]`.
 
 ## Ferramentas do projeto
