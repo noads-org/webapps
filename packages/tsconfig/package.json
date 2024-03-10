@@ -1,0 +1,10 @@
+{
+	"name": "@nodas/tsconfig",
+	"version": "0.0.0-development",
+	"peerDependencies": {
+		"typescript": "^5.4.2"
+	},
+	"devDependencies": {
+		"typescript": "5.4.2"
+	}
+}
