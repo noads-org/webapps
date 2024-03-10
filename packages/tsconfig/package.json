@@ -1,5 +1,5 @@
 {
-	"name": "@nodas/tsconfig",
+	"name": "@noads/tsconfig",
 	"version": "0.0.0-development",
 	"peerDependencies": {
 		"typescript": "^5.4.2"

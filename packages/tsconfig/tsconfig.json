@@ -13,6 +13,7 @@
     "module": "preserve",
     "noEmit": true,
     "lib": ["es2022"],
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions":true
   }
 }
