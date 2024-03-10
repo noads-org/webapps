@@ -39,6 +39,37 @@ Como este projeto é um monorepo, ele segue a seguinte estrutura:
 - packages (`./packages/*`): a pasta onde packages que pode ser reutilizadas em outros projetos vai ficar.
 - apps (`./apps/*`): a pasta dos projetos em si.
 
+## Rodando um projeto
+
+Imagine que você queira rodar o comando `dev` do projeto chamado `@noads/webapp`. Em um monorepo, há duas maneiras de rodar um comando de um projeto.
+
+A primeira é na raiz do projeto. Abra o terminal e rode o comando
+
+```bash
+pnpm --filter @noads/webapp run dev
+```
+
+A flag --filter pode ser usada para qualquer comando pnpm, inclusive no `add`:
+
+```bash
+pnpm --filter @noads/webapp add -E lodash-es
+```
+
+Ou então, você pode navegar até o projeto e rodar o comando dentro de seu diretório:
+
+```bash
+cd ./apps/webapp && pnpm run dev
+```
+
+Caso queira rodar algum comando através do Turbo (que vai rodar todos as dependencias em cascata), é a quase a mesma coisa. A única diferença é que agora você precisa passar `turbo`:
+
+```bash
+pnpm turbo --filter @noads/webapp run dev
+```
+
+> [[Importante]]
+> Vale ressaltar que o comando só vai funcionar se ele estiver listado dentro do `./turbo.json[pipelines]`.
+
 ## Ferramentas do projeto
 
 Esse projeto foi configurado com às seguintes ferramentas:
