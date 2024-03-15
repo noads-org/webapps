@@ -61,25 +61,41 @@ Sobre a pasta apps: aqui nós reúnimos todas as coisas. Aqui estará a base par
 
 ## Rodando um projeto
 
-Imagine que você queira rodar o comando `dev` do projeto chamado `@noads/webapp`. Em um monorepo, há duas maneiras de rodar um comando de um projeto.
+Imagine que você queira rodar o comando `dev` do projeto chamado `@noads/webapp`. Em um monorepo, há duas maneiras de rodar o comando de um projeto específico.
 
-A primeira é na raiz do projeto. Abra o terminal e rode o comando
+A primeira é na raiz do repositório a segunda é dentro da pasta do projeto em questão.
+
+### 1. Rodando a partir da raiz do repositório
+
+Abra o terminal e rode o comando
 
 ```bash
 pnpm --filter @noads/webapp run dev
 ```
 
-A flag --filter pode ser usada para qualquer comando pnpm, inclusive no `add`:
+Caso o projeto não exista ou o comando esteja errado, você receberá uma mensagem `No projects matched the filters in...`.
+
+OBS: A flag --filter pode ser usada para qualquer comando pnpm, inclusive no `add`, que adiciona novas dependências no nosso repositório.
 
 ```bash
 pnpm --filter @noads/webapp add -E lodash-es
 ```
 
-Ou então, você pode navegar até o projeto e rodar o comando dentro de seu diretório:
+Neste exemplo, estamos adicionando `lodash-es` ao projeto `@noads/webapp`.
+
+### 2. Rodando a partir da pasta do projeto em questão
+
+Você pode navegar até o projeto e rodar o comando dentro de seu diretório:
 
 ```bash
 cd ./apps/webapp && pnpm run dev
 ```
+
+---
+
+Para exemplificar este processo, temos um projeto demo em nosso repositório.
+
+Você pode rodar o comando `pnpm --filter @noads/demo-project run dev` e o comando `dev` será executado no projeto `demo-project`.
 
 Caso queira rodar algum comando através do Turbo (que vai rodar todos as dependencias em cascata), é a quase a mesma coisa. A única diferença é que agora você precisa passar `turbo`:
 
