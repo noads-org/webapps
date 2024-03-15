@@ -9,6 +9,10 @@ Antes de começar, precisamos de algumas ferramentas instaladas:
 - [NodeJS](https://nodejs.org/en) na versão 20.11.1
 - [pnpm](https://pnpm.io/) na versão 8.15.4
 
+Caso você utilize o VS Code como ferramenta de desenvolvimento, será exibida uma caixa de notificação perguntando se você deseja instalar as extensões recomendadas pelo nosso projeto. Você pode instalar sem receio.
+
+![VS Code recomendando a instalação das extensões](./.github/images/vscode-recomendacao.jpg)
+
 É extremamente importante que às versões sejam as mesmas, pois assim, todos os contribuidores poderão reproduzir os projetos de maneira semi-identica.
 
 > Recomendação
