@@ -13,17 +13,27 @@ Caso você utilize o VS Code como ferramenta de desenvolvimento, será exibida u
 
 ![VS Code recomendando a instalação das extensões](./.github/images/vscode-recomendacao.jpg)
 
-É extremamente importante que às versões sejam as mesmas, pois assim, todos os contribuidores poderão reproduzir os projetos de maneira semi-identica.
+A respeito do ambiente de desenvolvimento (Node.js e pnpm), é extremamente importante que às versões sejam as mesmas, pois assim, todos os contribuidores poderão reproduzir os projetos de maneira semi-identica e evitar problemas de ambiente de desenvolvimento.
 
-> Recomendação
-> Existem ferramentas que ajudam a fazer esse controle automaticamente. Para as versões de Node, existe o [Volta](https://docs.volta.sh/guide/), o [ASDF](https://asdf-vm.com/contribute/documentation.html#initial-setup), o [NVM](https://github.com/nvm-sh/nvm), e até mesmo o próprio [pnpm](https://pnpm.io/cli/env).
+> **Recomendação**
 >
-> Já para o NPM, eu sugiro fortemente a instalação do [corepack](https://github.com/nodejs/corepack), que é uma ferramenta oficial do Node que gerencia as versões dos gerenciadores de pacotes automaticamente. Aqui estão os passos de como usar:
+> Existem ferramentas que ajudam a fazer esse controle automaticamente.
+>
+> Para as versões de Node, temos o [Volta](https://docs.volta.sh/guide/), o [ASDF](https://asdf-vm.com/contribute/documentation.html#initial-setup), o [NVM](https://github.com/nvm-sh/nvm), e até mesmo o próprio [pnpm](https://pnpm.io/cli/env).
+>
+> Caso você opte por utilizar o NVM, basta executar os comandos
+>
+> 1. `nvm install` para instalar a versão que padronizamos via .nvmrc.
+> 2. `nvm use` para setar essa versão no seu ambiente
+>    Caso tenha dúvidas pode consultar: [Utilizando versões antigas do Node.js](https://woliveiras.com.br/posts/utilizando-versoes-antigas-do-nodejs/)
+>
+> Já para o NPM, recomendamos fortemente a instalação do [corepack](https://github.com/nodejs/corepack), que é uma ferramenta oficial do Node.js que gerencia as versões dos gerenciadores de pacotes (npm, yarn, pnpm, etc) automaticamente. Aqui estão os passos de como usar:
 >
 > 1. Instale o corepack globalmente com npm (ou pnpm): `npm install -g corepack`
 > 2. Rode o comando para "ativar" a versão do pnpm que a gente vai usar: `corepack prepare pnpm@8.15.4 --activate`
-> 3. Vá na sua configuração de terminal (.bash_profile, .zshrc, etc.), e adicione o seguinte alias: `alias pnpm="corepack pnpm"`
-> 4. Reinicie seu terminal.
+> 3. Vá na sua configuração de terminal (.bash_profile, .zshrc, etc.), e adicione o seguinte alias: `alias pnpm="corepack pnpm"` ou execute o seguinte comando, alterando o arquivo `.zshrc` para seu arquivo de configuração `echo "alias pnpm='corepack pnpm'" >> ~/.zshrc`.
+> 4. Reinicie seu terminal ou execute o comando `source ~/.zshrc` mudando `.zshrc` para o seu arquivo de configuração.
+> 5. Para verificar se está tudo OK, execute o comando `pnpm --version`
 
 ## Começando
 
