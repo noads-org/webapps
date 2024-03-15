@@ -49,9 +49,15 @@ Feito isso, todas as dependencias de todos os projetos vão ser instaladas.
 
 Como este projeto é um monorepo, ele segue a seguinte estrutura:
 
-- root (`./`): é o ponto de partida do projeto. Aqui a gente vai ter o package.json central que vão ter dependencias para manutenção do repositorio. Nenhuma dependencia especifica de projeto deve ser instalada aqui.
+- root (`./`): é o ponto de partida do projeto. Aqui a gente vai ter o `package.json` central que vão ter dependencias para manutenção do repositorio. **Nenhuma dependencia especifica de projeto deve ser instalada aqui**.
 - packages (`./packages/*`): a pasta onde packages que pode ser reutilizadas em outros projetos vai ficar.
 - apps (`./apps/*`): a pasta dos projetos em si.
+
+Sobre dependências: trabalhando com monorepos, nós temos as dependências globais, que são comuns a todos os projetos dentro do monorepo, e as locais, que são exclusivas de cada projeto. Caso o seu projeto possua algo muito específico, que você tem certeza que não será utilizado por outros projetos, você deve rodar a instalação da depdendência dentro da pasta desse projeto em questão.
+
+Sobre a pasta packages: aqui é onde deve viver a maior parte do nosso código. Componentes, módulos e tudo o que seria compartilhado em uma aplicação, devem ser construídos dentro desta pasta a vias de compartilharmos estes códigos entre todos os projetos.
+
+Sobre a pasta apps: aqui nós reúnimos todas as coisas. Aqui estará a base para a construção de páginas e juntar nossos componentes e módulos para transformar em um projeto em questão.
 
 ## Rodando um projeto
 
